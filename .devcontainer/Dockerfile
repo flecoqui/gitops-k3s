@@ -14,4 +14,4 @@ RUN apt-get update \
     && apt-get install -y apt-transport-https \
     && apt-get install -y dotnet-sdk-6.0
 
-#RUN echo 'source /usr/share/bash-completion/completions/git' >> /home/vscode/.bashrc
+RUN echo 'source /usr/share/bash-completion/completions/git' >> /home/vscode/.bashrc

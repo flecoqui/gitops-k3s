@@ -2,12 +2,13 @@
 	"$schema": "https://json-schema.org/draft-07/schema#",
 	"name": "Ubuntu",
 	"build": {
-		  "dockerfile": "Dockerfile"
+		  "dockerfile": "Dockerfile",
+		  "context": ".."
 	  },
 
 	  "customizations": {
 		  "vscode": {
-			 // "settings": { },
+			  "settings": { },
 			  
 			  "extensions": [
 				  "ms-vscode.hexeditor",
@@ -19,7 +20,7 @@
 	  },  
 	  "remoteUser": "vscode",
 	  "features": {
-		//"git": "latest",
+		"git": "latest",
 		"ghcr.io/devcontainers/features/docker-in-docker:1": {
 			"version": "latest"
 		},
@@ -36,5 +37,5 @@
 		"type=bind,source=${localEnv:HOME}${env:USERPROFILE}/.kube,target=/home/vscode/.kube",
 		"type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock"
 	  ],  
-	//"postAttachCommand": "mkdir -p /home/$(id -un)/.ssh && touch /home/$(id -un)/.ssh/config && sudo chown -R vscode:vscode /var/run/docker.sock"
+	"postAttachCommand": "mkdir -p /home/$(id -un)/.ssh && touch /home/$(id -un)/.ssh/config && sudo chown -R vscode:vscode /var/run/docker.sock"
 }
